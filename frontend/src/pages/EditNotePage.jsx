@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./AddNotePage.css";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import api from "../api";
 
 const EditNotePage = ({updateNote}) => {
   const [title, setTitle] = useState("");
@@ -11,8 +12,7 @@ const EditNotePage = ({updateNote}) => {
   const { slug } = useParams();
   const navigate = useNavigate()
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/notes/${slug}`)
+    api.get(`/notes/${slug}`)
       .then((res) => {
         // console.log(res.data);
         setTitle(res.data.title);

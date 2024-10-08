@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Note(models.Model):
@@ -13,6 +14,7 @@ class Note(models.Model):
     body = models.TextField()
     slug = models.SlugField(unique=True, blank=True, null=True)
     category = models.CharField(max_length=15, choices=CATEGORY, default="PERSONAL")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="notes", blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

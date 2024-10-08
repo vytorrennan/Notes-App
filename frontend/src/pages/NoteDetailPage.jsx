@@ -6,6 +6,7 @@ import "./NoteDetailPage.css";
 import axios from "axios";
 import { FormatDate } from "../components/FormatDate";
 import Modal from "../components/Modal";
+import api from "../api";
 
 const NoteDetailPage = ({ deleteNote }) => {
   const [note, setNote] = useState({});
@@ -17,8 +18,7 @@ const NoteDetailPage = ({ deleteNote }) => {
   };
 
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/notes/${slug}`)
+    api.get(`/notes/${slug}`)
       .then((res) => {
         setNote(res.data);
         console.log(res.data);

@@ -6,9 +6,9 @@ const NavBar = ({searchText, handelSearchText}) => {
   return (
     <nav className="navbar bg-body-tertiary py-50" style={{ padding: "20px" }}>
       <div className="container d-flex justify-content-around">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="/">
           <h4 style={{ fontWeight: "bold" }}>Notey</h4>
-        </Link>
+        </a>
         <div className="d-flex">
           <div
             className="input-group input-group-sm"
@@ -35,6 +35,8 @@ const NavBar = ({searchText, handelSearchText}) => {
             <FaSquarePlus className="me-2 fs-6" /> Add Notes
           </button>
         </Link>
+
+        <Link to="/logout" className='btn btn-danger'>Logout</Link>
       </div>
     </nav>
   )
