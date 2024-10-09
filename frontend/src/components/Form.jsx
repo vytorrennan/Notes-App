@@ -5,6 +5,8 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../index.css"
 import LoadingIndicator from "./LoadingIndicator";
 
+
+
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -12,6 +14,8 @@ function Form({ route, method }) {
     const navigate = useNavigate();
 
     const name = method === "login" ? "Login" : "Register";
+    const reverseName = method === "login" ? "Register" : "Login";
+    const reverseUrl = method === "login" ? "/register" : "/login"
 
     const handleSubmit = async (e) => {
         setLoading(true);
@@ -34,6 +38,11 @@ function Form({ route, method }) {
         }
     };
 
+    let elementsToBeRemoved = document.getElementsByClassName("formRemove")
+    for (let i = 0; i < elementsToBeRemoved.length; i++) {
+        elementsToBeRemoved[i].remove();
+    }
+
     return (
         <form onSubmit={handleSubmit} className="form-container">
             <h1>{name}</h1>
@@ -54,9 +63,10 @@ function Form({ route, method }) {
                 />
             </div>
             {loading && <LoadingIndicator />}
-            <button className="form-button btn btn-primary" type="submit">
+            <button className="form-button btn btn-primary mb-2" type="submit">
                 {name}
             </button>
+            <a href={reverseUrl} className="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover pt-5">Go to {reverseName}</a>
         </form>
     );
 }
