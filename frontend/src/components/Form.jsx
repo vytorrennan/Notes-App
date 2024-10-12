@@ -38,11 +38,6 @@ function Form({ route, method }) {
         }
     };
 
-    let elementsToBeRemoved = document.getElementsByClassName("formRemove")
-    for (let i = 0; i < elementsToBeRemoved.length; i++) {
-        elementsToBeRemoved[i].remove();
-    }
-
     return (
         <form onSubmit={handleSubmit} className="form-container">
             <h1>{name}</h1>
@@ -66,7 +61,7 @@ function Form({ route, method }) {
             <button className="form-button btn btn-primary mb-2" type="submit">
                 {name}
             </button>
-            <a href={reverseUrl} className="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover pt-5">Go to {reverseName}</a>
+            <a href={reverseUrl} className="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover mt-5">Go to {reverseName}</a>
         </form>
     );
 }

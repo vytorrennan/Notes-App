@@ -107,7 +107,7 @@ const App = () => {
     };
 
     const deleteNote = (slug) => {
-        api.delete(`http://127.0.0.1:8000/notes/${slug}/`)
+        api.delete(`/notes/${slug}/`)
             .catch((err) => console.log(err.message));
     };
 
