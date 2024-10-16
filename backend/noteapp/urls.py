@@ -3,9 +3,9 @@ from .import views
 
 
 urlpatterns = [
-    path("notes/", views.notes, name="notes"),
-    path("notes/<slug:slug>/", views.note_detail, name="note-detail"),
-    path("notes-search/", views.search_notes, name='notes-search')
+    path("notes/", views.NotesView.as_view(), name="notes"),
+    path("notes/<slug:slug>/", views.NoteDetailView.as_view(), name="note-detail"),
+    path("notes-search/", views.SearchNotesView.as_view(), name="notes-search"),
 ]
 
 # endpoints:
