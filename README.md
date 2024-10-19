@@ -1,3 +1,7 @@
+# Horse Notes
+Aplicação de notas \
+Projeto online em: https://horse-notes.vercel.app/
+
 # Como executar o projeto:
 
 ## Backend
