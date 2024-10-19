@@ -1,5 +1,5 @@
 # Horse Notes
-Aplicação de notas
+Aplicação de notas \
 Projeto online em: https://horse-notes.vercel.app/
 
 # Como executar o projeto:
