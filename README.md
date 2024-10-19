@@ -29,10 +29,10 @@ No terminal na pasta backend execute: `pip install -r requirements.txt`
 ### Passo 5 
 Faça as migrations
 #### No Windows
-No terminal na pasta backend execute: `python manage.py makemigrations`
+No terminal na pasta backend execute: `python manage.py makemigrations` \
 No terminal na pasta backend execute: `python manage.py migrate`
 #### No Linux
-No terminal na pasta backend execute: `python3 manage.py makemigrations`
+No terminal na pasta backend execute: `python3 manage.py makemigrations` \
 No terminal na pasta backend execute: `python3 manage.py migrate`
 
 ### Passo 6 
